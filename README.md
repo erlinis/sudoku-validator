@@ -1,5 +1,9 @@
 # Ruby Challenges / Sudoku Validator
 
+Soduku validations solution.
+
+--
+
 Hey there! We're [thoughtbot](https://thoughtbot.com), a design and
 development consultancy that brings your digital product ideas to life.
 We also love to share what we learn.

@@ -27,6 +27,19 @@ describe "End-to-end test" do
     end
   end
 
+  context "when the sudoku has invalid row" do
+    fixture = "spec/fixtures/invalid_due_to_column_dupe.sudoku"
+
+    it "returns a string saying so" do
+      result = Validator.validate(File.read(fixture))
+
+      expect(result).to(
+        eq("This sudoku is invalid."),
+        "expected #{fixture} to be invalid but it wasn't."
+      )
+    end
+  end
+
   context "when the sudoku is invalid" do
     invalid_fixtures = ["spec/fixtures/invalid_due_to_row_dupe.sudoku",
                         "spec/fixtures/invalid_due_to_column_dupe.sudoku",
@@ -38,7 +51,7 @@ describe "End-to-end test" do
 
         expect(result).to(
           eq("This sudoku is invalid."),
-          "Expected #{fixture} to be invalid but it wasn't."
+          "expected #{fixture} to be invalid but it wasn't."
         )
       end
     end
